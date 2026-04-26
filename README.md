@@ -30,13 +30,13 @@ Banks require automated systems to assess credit default risk before loan disbur
 **HIGH RISK — 0.8123** | 30k limit customer, 3 months consecutively late (PAY_0=3, PAY_2=3), 97% utilization, paying only 500/month against a 29,000 bill. Deteriorating payment history across all 6 months confirmed by model at 81.2% default probability.
 
 ![Low Risk Test](/testing/test2.png)
-**LOW RISK — 0.1482** | 500k limit, PAY=-2 across all 6 months (no consumption / paid in full), paying exact bill amount every month, 1% utilization. Model correctly identifies 14.8% default probability.
+**LOW RISK — 0.1482** | 500k limit, PAY=-2 across all 6 months (no consumption / paid in full), paying exact bill amount every month, 1% utilization. Model correctly identifies zero delinquency signals — 14.8% default probability.
 
 ![High Risk Test 2](/testing/test3.png)
 **HIGH RISK — 0.8043** | 50k limit at 94% utilization, actively 2 months late on most recent payments (PAY_0=2, PAY_2=2), debt growing from 35k to 47k over 6 months, payment ratio under 4%. Clear deterioration trajectory confirmed at 80.4% default probability.
 
 ![Low Risk Test 2](/testing/test4.png)
-**LOW RISK — 0.1039** | 200k limit at 12% utilization, paying full bill amount each month, only two months of minimum payments (PAY_3=0, PAY_4=0) but never late. Model correctly assigns 10.4% default probability.
+**LOW RISK — 0.1039** | 200k limit at 12% utilization, paying full bill amount each month, only two months of minimum payments (PAY_3=0, PAY_4=0) but never late. Stable debt with no delinquency — model correctly assigns 10.4% default probability.
 
 ## System Architecture
 ```
